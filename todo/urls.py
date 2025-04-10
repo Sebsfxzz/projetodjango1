@@ -1,8 +1,11 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from todo import views
 
 urlpatterns= [
     path('admin/', admin.site.urls),
-    path("",views.home,name="home")
-]
+    path("",views.home,name="home"),
+    path("agregar/",views.agregar,name="agregar" ),
+    path("eliminar/<int:tarea_id>/",views.eleminar,name="eleminar"),
+    path("editar/<int:tarea_id>/",views.editar,name="editar")
+    ]
